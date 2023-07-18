@@ -1,0 +1,6 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('Redondo.csv', header = 0, index_col=0 ,on_bad_lines='skip')
+
+df['Momento Resistente Wx (cm3)'] = np.power(df['Sección F (cm2)'], 1.5)/(np.power(np.pi, 2) * 4)
